@@ -19,7 +19,7 @@ const routes = new Router({
   // About Us page, note the change from about-us to aboutUs.
   aboutUs,
 });
-
+// 
 // Load Events
 $(document).ready(() => routes.loadEvents());
 
