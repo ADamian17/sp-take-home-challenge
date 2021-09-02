@@ -38,6 +38,6 @@ const currentLink = {
 const secondaryNav = document.getElementById('secondary-nav');
 
 secondaryNav.addEventListener('click', (e) => {
-  if(e.target.classList.contains('navbar-collapse')) return;
+  if(e.target.classList.contains('navbar-collapse') || e.target.id === 'secondary-nav') return;
   currentLink.updateLink(e.target);
 });
