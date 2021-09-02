@@ -11,13 +11,9 @@
           @include('partials.hero')
           <!-- secondary nav -->
           @include('partials.secondary-nav')
-          @yield('content')
+          @include('partials.cards')
+          <!-- @yield('content') -->
         </main>
-        @if (App\display_sidebar())
-          <aside class="sidebar">
-            @include('partials.sidebar')
-          </aside>
-        @endif
       </div>
     </div>
     @php do_action('get_footer') @endphp

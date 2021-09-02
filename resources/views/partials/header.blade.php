@@ -9,11 +9,13 @@
 
     <!-- top nav -->
     <nav class="navbar nav-primary">
-      <!-- @if (has_nav_menu('primary_navigation'))
+      @if (has_nav_menu('primary_navigation'))
         {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
-      @endif -->
+      @endif
 
-      @include('partials.top-navlink')
+      <button class="btn btn-danger shadow-sm">
+        Try It Free
+      </button>
     </nav>
   </section>
 </header>
