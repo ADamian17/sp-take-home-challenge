@@ -4,9 +4,13 @@
   <body @php body_class() @endphp>
     @php do_action('get_header') @endphp
     @include('partials.header')
-    <div class="wrap container" role="document">
+    <div class="wrap container-fluid p-0" role="document">
       <div class="content">
-        <main class="main">
+        <main class="main p-0">
+          <!-- hero -->
+          @include('partials.hero')
+          <!-- secondary nav -->
+          @include('partials.secondary-nav')
           @yield('content')
         </main>
         @if (App\display_sidebar())

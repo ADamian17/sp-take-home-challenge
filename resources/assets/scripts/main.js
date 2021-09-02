@@ -1,5 +1,5 @@
 // import external dependencies
-import 'jquery';
+import $ from 'jquery';
 
 // Import everything from autoload
 import './autoload/**/*'
@@ -21,4 +21,23 @@ const routes = new Router({
 });
 
 // Load Events
-jQuery(document).ready(() => routes.loadEvents());
+$(document).ready(() => routes.loadEvents());
+
+const currentLink = {
+  value: document.querySelector('.active-link'),
+  updateLink: (target) => {
+    if (currentLink.value !== target && currentLink.value.classList.contains('active-link')) {
+      target.classList.add('active-link')
+      currentLink.value.classList.remove('active-link');
+      currentLink.value = target;
+      return;
+    }
+  },
+}
+
+const secondaryNav = document.getElementById('secondary-nav');
+
+secondaryNav.addEventListener('click', (e) => {
+  if(e.target.classList.contains('navbar-collapse')) return;
+  currentLink.updateLink(e.target);
+});
