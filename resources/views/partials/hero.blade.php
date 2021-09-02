@@ -1,7 +1,9 @@
-<section class="py-5 text-start container pb-0">
+
+
+ <section class="py-5 text-start container pb-0">
   <div class="row py-xlg-5">
 
-    <!-- rigth side-->
+    <!-- rigth side -->
     <div 
       class="col-lg-6 col-md-8 mx-auto p-3 d-grid justify-content-center">
       <h1 class="fs-bold">

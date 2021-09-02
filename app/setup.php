@@ -47,6 +47,7 @@ add_action('after_setup_theme', function () {
         'primary_navigation' => __('Primary Navigation', 'sage'),
         'secondary_navigation' => __('Secondary Navigation', 'sage'),
     ]);
+    
 
     /**
      * Enable post thumbnails
@@ -86,6 +87,18 @@ add_action('widgets_init', function () {
     register_sidebar([
         'name'          => __('Primary', 'sage'),
         'id'            => 'sidebar-primary'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Hero', 'sage'),
+        'id'            => 'hero'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Hero-RS', 'sage'),
+        'id'            => 'hero-rs'
+    ] + $config);
+    register_sidebar([
+        'name'          => __('Hero-LS', 'sage'),
+        'id'            => 'hero-ls'
     ] + $config);
     register_sidebar([
         'name'          => __('Footer', 'sage'),

@@ -11,8 +11,7 @@
           @include('partials.hero')
           <!-- secondary nav -->
           @include('partials.secondary-nav')
-          @include('partials.cards')
-          <!-- @yield('content') -->
+          @yield('content')
         </main>
       </div>
     </div>

@@ -1,6 +1,5 @@
 <footer class="container background-azul mt-5 h-100 text-center text-white pt-5">
-    <h1 class="fs-bold">Manage and grow your private <br /> practice, all in one place.</h1>
-    <small>Free 30-day trial, no contracts, change anytime, tax deductible</small>
+  @php dynamic_sidebar('sidebar-footer') @endphp
 
     <div class="row mt-5">
       <div class="col">
@@ -43,9 +42,3 @@
       </div>
     </div>
   </footer>
-
-  <!-- <footer class="content-info">
-  <div class="container">
-    @php dynamic_sidebar('sidebar-footer') @endphp
-  </div>
-</footer> -->

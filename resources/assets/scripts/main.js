@@ -23,6 +23,7 @@ const routes = new Router({
 // Load Events
 $(document).ready(() => routes.loadEvents());
 
+// state
 const currentLink = {
   value: document.querySelector('.active-link'),
   updateLink: (target) => {
@@ -35,9 +36,15 @@ const currentLink = {
   },
 }
 
+// dom varaibles
 const secondaryNav = document.getElementById('secondary-nav');
 
+
+
 secondaryNav.addEventListener('click', (e) => {
-  if(e.target.classList.contains('navbar-collapse') || e.target.id === 'secondary-nav') return;
+  if(
+      e.target.classList.contains('navbar-collapse') || 
+      e.target.id === 'secondary-nav') return;
+
   currentLink.updateLink(e.target);
 });
