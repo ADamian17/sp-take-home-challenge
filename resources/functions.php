@@ -82,6 +82,7 @@ array_map(
     ['theme_file_path', 'theme_file_uri', 'parent_theme_file_path', 'parent_theme_file_uri'],
     array_fill(0, 4, 'dirname')
 );
+
 Container::getInstance()
     ->bindIf('config', function () {
         return new Config([
@@ -90,3 +91,13 @@ Container::getInstance()
             'view' => require dirname(__DIR__).'/config/view.php',
         ]);
     }, true);
+
+
+function add_additional_class_on_li($classes, $item, $args) {
+    if(isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
+    }
+    return $classes;
+}
+
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);    

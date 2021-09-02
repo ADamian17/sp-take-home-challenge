@@ -27,9 +27,9 @@ const currentLink = {
   value: document.querySelector('.active-link'),
   updateLink: (target) => {
     if (currentLink.value !== target && currentLink.value.classList.contains('active-link')) {
-      target.classList.add('active-link')
+      target.parentNode.classList.add('active-link')
       currentLink.value.classList.remove('active-link');
-      currentLink.value = target;
+      currentLink.value = target.parentNode;
       return;
     }
   },

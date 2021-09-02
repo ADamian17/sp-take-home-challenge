@@ -1,6 +1,5 @@
 <div class="album bg-light">
       <div class="container p-5 pb-0">
-  
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
 
           <div class="col-sm-3">
