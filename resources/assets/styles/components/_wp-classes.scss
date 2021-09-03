@@ -57,4 +57,21 @@
 
 .navbar-nav {
   gap: 30px;
+  position: relative;
+}
+
+.menu-item-16::after {
+  content: "⌵";
+  position: absolute;
+  top: 23%;
+  right: 78%;
+  font-weight: bold;
+}
+
+.menu-item-18::after {
+  content: "⌵";
+  position: absolute;
+  top: 23%;
+  right: 40%;
+  font-weight: bold;
 }
