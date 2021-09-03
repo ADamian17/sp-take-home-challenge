@@ -4,7 +4,7 @@
     <div class="row mt-5">
       <div class="col">
         <button class="btn btn-danger shadow-sm">
-          Try It Free →
+          Try It Free Now →
         </button>
 
         <ul class="d-flex flex-column align-items-center mt-3 text-start w-30">

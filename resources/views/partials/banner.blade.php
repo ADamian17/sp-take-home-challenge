@@ -7,7 +7,7 @@
     <p><strong>Join 100,000+ people</strong> and get resources that have helped thousands of your peers get better at their jobs.</p>
     <form>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons">
+        <input type="text" class="form-control" placeholder="Enter your email" aria-label="Enter your email">
         <button class="btn btn-danger shadow-sm">
           Join Now
         </button>

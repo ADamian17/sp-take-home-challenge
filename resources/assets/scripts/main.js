@@ -37,24 +37,21 @@ const currentLink = {
 }
 
 // dom varaibles
-//const secondaryNav = document.getElementById('secondary-nav');
-
 const menuLinks = $('ul#menu-secondary-nav > li > a')
+const my_repeater_ajax_url = $('#album-ajax').data('my_repeater_ajax_url')
+const post_id = $('#album-ajax').data('post-id')
 
-console.log(menuLinks)
 menuLinks.each(function(){
   $(this).on('click', (e) => {
     e.preventDefault()
     console.log(this)
     currentLink.updateLink(this);
     const str = this.getAttribute('href');
+    
     my_repeater_show_more(str.substring(str.length - 1))
   });
 });
 
-
-const my_repeater_ajax_url = $('#album-ajax').data('my_repeater_ajax_url')
-const post_id = $('#album-ajax').data('post-id')
 
 function my_repeater_show_more(filter) {
   // make ajax request
@@ -66,7 +63,6 @@ function my_repeater_show_more(filter) {
       'filter': filter,
     },
     function (json) {
-      console.log(json);
       $('#cards-container').empty()
       $('#cards-container').append(json['content']);
     },

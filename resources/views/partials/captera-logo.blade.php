@@ -1,4 +1,4 @@
-<svg class="capterra-icon mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="299.91pt" height="66.28pt" viewBox="0 0 299.91 66.28" version="1.1">
+<svg class="capterra-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="299.91pt" height="66.28pt" viewBox="0 0 299.91 66.28" version="1.1">
 <defs>
 <clipPath id="clip1">
   <path d="M 44 0 L 66 0 L 66 66.28125 L 44 66.28125 Z M 44 0 "/>

@@ -1,31 +1,31 @@
 
 
  <section class="py-5 text-start container pb-0">
-  <div class="row py-xlg-5">
+  <div class="hero">
 
     <!-- rigth side -->
-    <div 
-      class="col-lg-6 col-md-8 mx-auto p-3 d-grid justify-content-center">
+    <div class="hero__rigth-side">
+
       <h1 class="fs-bold">
         Tools, guides, and <br/> 
         more to build your <br /> 
         best practice.
       </h1>
-      @include('partials.stars-icons')
 
-      <p class="text-muted mr-2">2,361</p>
-
-      <!-- captera logo -->
-      @include('partials.captera-logo')
-
-      <p>logo 2</p>
+      <div class="hero__info">
+        <!-- stars -->
+        @include('partials.stars-icons')
+        <p class="botes text-muted">2,361</p>
+        <!-- captera logo -->
+        @include('partials.captera-logo')
       </div>
+
     </div>
 
 
     <!-- left side -->
-    <div class="col-lg-6 col-md-8 mx-auto p-4">
-      <p class="lead my-3">Our resources have helped thouseands of your peers get better at their jobs. Get the latest in your inbox</p>
+    <div class="hero__rigth-left">
+      <p class="lead my-3">Our resources have helped thousands of your peers get better at their jobs. Get the latest in your inbox.</p>
 
       <form class="row g-3">
         <div class="col-6">
@@ -35,7 +35,7 @@
               <title>check</title>
               <path d="M9 16.172l10.594-10.594 1.406 1.406-12 12-5.578-5.578 1.406-1.406z"></path>
             </svg>
-              Free, no spam, unsubcribe anytime
+              Free, no spam, unsubcribe anytime.
           </small>
         </div>
         <div class="col-auto">
