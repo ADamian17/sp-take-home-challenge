@@ -54,3 +54,7 @@
   @extend .sr-only;
   @extend .sr-only-focusable;
 }
+
+.navbar-nav {
+  gap: 30px;
+}

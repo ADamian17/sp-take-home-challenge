@@ -7,7 +7,7 @@
         <div class="col-sm-3">
         <div class="card shadow-sm mb-4">
           
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#a1a2a7"></rect></svg>
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e1dede"></rect></svg>
 
           <div class="card-body">
             <h6 class="text-uppercase">{{ the_sub_field('title') }}</h6>
