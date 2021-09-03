@@ -144,3 +144,45 @@ add_action('after_setup_theme', function () {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });
+
+add_action('wp_ajax_my_repeater_filter', my_repeater_filter());
+add_action( 'wp_ajax_nopriv_my_repeater_filter', my_repeater_filter() );
+
+function my_repeater_filter() {
+    // make sure we have the other values
+    if (!isset($_POST['filter']) || !isset($_POST['postId'])) {
+        return;
+    }
+    
+    $filter = $_POST['filter'];
+    $post_id = $_POST['postId'];
+
+    // use an object buffer to capture the html output
+    // alternately you could create a varaible like $html
+    // and add the content to this string, but I find
+    // object buffers make the code easier to work with
+    ob_start();
+		if (have_rows('cards', $post_id)) {
+			while (have_rows('cards', $post_id)) {
+				the_row();
+
+                if ( get_sub_field('category') == $filter ) {
+				?>
+                <div class="col-sm-3">
+        <div class="card shadow-sm">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#a1a2a7"></rect></svg>
+
+          <div class="card-body">
+            <h3><?php the_sub_field('title') ?> </h3>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+                <?php
+                }
+			} // end while have rows
+		} // end if have rows
+		$content = ob_get_clean();
+		echo json_encode(array('content' => $content));
+    exit;
+}

@@ -37,14 +37,39 @@ const currentLink = {
 }
 
 // dom varaibles
-const secondaryNav = document.getElementById('secondary-nav');
+//const secondaryNav = document.getElementById('secondary-nav');
 
+const menuLinks = $('ul#menu-secondary-nav > li > a')
 
-
-secondaryNav.addEventListener('click', (e) => {
-  if(
-      e.target.classList.contains('navbar-collapse') || 
-      e.target.id === 'secondary-nav') return;
-
-  currentLink.updateLink(e.target);
+console.log(menuLinks)
+menuLinks.each(function(){
+  $(this).on('click', (e) => {
+    e.preventDefault()
+    console.log(this)
+    currentLink.updateLink(this);
+    const str = this.getAttribute('href');
+    my_repeater_show_more(str.substring(str.length - 1))
+  });
 });
+
+
+const my_repeater_ajax_url = $('#album-ajax').data('my_repeater_ajax_url')
+const post_id = $('#album-ajax').data('post-id')
+
+function my_repeater_show_more(filter) {
+  // make ajax request
+  jQuery.post(
+    my_repeater_ajax_url, {
+      // this is the AJAX action we set up in PHP
+      'action': 'my_repeater_filter',
+      'postId' : post_id,
+      'filter': filter,
+    },
+    function (json) {
+      console.log(json);
+      $('#cards-container').empty()
+      $('#cards-container').append(json['content']);
+    },
+    'json'
+  );
+}
