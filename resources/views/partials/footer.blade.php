@@ -1,7 +1,7 @@
 <footer class="footer container background-azul mt-5 h-100 text-white pt-5">
   @php dynamic_sidebar('sidebar-footer') @endphp
       
-    <button class="btn btn-danger shadow-sm">
+    <button class="btn btn-danger shadow-sm mb-3">
       Try It Free Now →
     </button>
     
