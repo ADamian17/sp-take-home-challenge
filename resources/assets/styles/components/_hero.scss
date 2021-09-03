@@ -1,4 +1,9 @@
+header.banner {
+  background-color: #fff;
+}
+
 .hero {
+  background-color: #fff;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -41,4 +46,10 @@
 .capterra-icon {
   width: 70px;
   height: 25px;
+}
+
+#emil.comment-form input[type="text"]::placeholder {
+  font-size: 10px !important;
+  color: #6c757d;
+  opacity: 1;
 }
