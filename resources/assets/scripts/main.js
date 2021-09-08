@@ -52,10 +52,11 @@ menuLinks.each(function(){
   });
 });
 
+// LINK https://github.com/Hube2/acf-dynamic-ajax-select-example/blob/master/repeater-ajax-load-more/repeater-ajax-load-more.php
 
 function my_repeater_show_more(filter) {
   // make ajax request
-  jQuery.post(
+  $.post(
     my_repeater_ajax_url, {
       // this is the AJAX action we set up in PHP
       'action': 'my_repeater_filter',
