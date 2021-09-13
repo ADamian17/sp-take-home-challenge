@@ -18,10 +18,10 @@ header.banner {
   grid-template-rows: min-content;
   grid-auto-rows: min-content;
   row-gap: 15px;
-}
 
-.hero__rigth-side p {
-  margin: 0;
+  p {
+    margin: 0;
+  }
 }
 
 .hero__rigth-left p {

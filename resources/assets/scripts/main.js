@@ -58,7 +58,8 @@ menuLinks.each(function() {
 
     currentLink.updateLink(this);
     const str = this.getAttribute('href');
-    let categoryId = 'all'
+    let categoryId = 'all';
+
     if (str !== '/') {
       const urlStr = new URL(`http:${str}`);
       categoryId = urlStr.searchParams.get('cat');
@@ -73,6 +74,7 @@ menuLinks.each(function() {
 * makes an ajax request to my wordpress intance to get back a json representation of my already filtered cards.
 * @param {string} filter - an string that represent the category that we want to filter
 */
+
 function myRepeaterShowMore(filter) {
   // make ajax request
   $.post(

@@ -144,8 +144,9 @@ add_action('after_setup_theme', function () {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });
-
+// add action for logged in users
 add_action('wp_ajax_my_repeater_filter', my_repeater_filter());
+// add action for non logged in users
 add_action( 'wp_ajax_nopriv_my_repeater_filter', my_repeater_filter() );
 
 function my_repeater_filter() {
