@@ -1,5 +1,5 @@
 
-<div id="album-ajax" class="album bg-light" data-my_repeater_ajax_url="{{ admin_url('admin-ajax.php') }}" data-post-id="{{$post->ID}}" >
+<div id="album-ajax" class="album bg-light" data-my_repeater_ajax_url="{{ admin_url('admin-ajax.php') }}" data-post-id="{{$post->ID}}">
   <div class="container p-5 pb-0">
     <div id="cards-container" class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
     @if (have_rows('cards'))

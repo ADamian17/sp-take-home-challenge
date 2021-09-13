@@ -150,6 +150,7 @@ add_action( 'wp_ajax_nopriv_my_repeater_filter', my_repeater_filter() );
 
 function my_repeater_filter() {
     // make sure we have the other values
+    // isset Determine if a variable is declared and is different than NULL
     if (!isset($_POST['filter']) || !isset($_POST['postId'])) {
         return;
     }
@@ -157,15 +158,15 @@ function my_repeater_filter() {
     $filter = $_POST['filter'];
     $post_id = $_POST['postId'];
 
-    // use an object buffer to capture the html output
-    // alternately you could create a varaible like $html
-    // and add the content to this string, but I find
-    // object buffers make the code easier to work with
+    /* 
+        use an object buffer to capture the html output
+        and add the content to this string 
+    */
     ob_start();
 		if (have_rows('cards', $post_id)) {
 			while (have_rows('cards', $post_id)) {
 				the_row();
-                if ($filter == '/') {
+                if ($filter == 'all') {
                     ?>
                      <div class="col-sm-3">
                     <div class="card shadow-sm mb-4">

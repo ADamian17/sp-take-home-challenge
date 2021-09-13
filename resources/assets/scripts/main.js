@@ -23,9 +23,20 @@ const routes = new Router({
 // Load Events
 $(document).ready(() => routes.loadEvents());
 
+
 // state
+/** 
+ * I'm using the currentLink to keep track of my current category link.
+ * @property {HTMLElement} value - current active link. 
+ * @property {function} updateLink - method to update the active link
+*/
+
 const currentLink = {
   value: document.querySelector('.active-link'),
+  /** 
+  * method to update the active link.
+  * @param {HTMLElement} target - dom element to update.
+  */
   updateLink: (target) => {
     if (currentLink.value !== target && currentLink.value.classList.contains('active-link')) {
       target.parentNode.classList.add('active-link')
@@ -38,26 +49,34 @@ const currentLink = {
 
 // dom varaibles
 const menuLinks = $('ul#menu-secondary-nav > li > a')
-const my_repeater_ajax_url = $('#album-ajax').data('my_repeater_ajax_url')
+const myRepeaterAjaxUrl = $('#album-ajax').data('my_repeater_ajax_url')
 const post_id = $('#album-ajax').data('post-id')
 
-menuLinks.each(function(){
+menuLinks.each(function() {
   $(this).on('click', (e) => {
     e.preventDefault()
-    console.log(this)
+
     currentLink.updateLink(this);
     const str = this.getAttribute('href');
+    let categoryId = 'all'
+    if (str !== '/') {
+      const urlStr = new URL(`http:${str}`);
+      categoryId = urlStr.searchParams.get('cat');
+    }
     
-    my_repeater_show_more(str.substring(str.length - 1))
+    myRepeaterShowMore(categoryId)
   });
 });
 
 // LINK https://github.com/Hube2/acf-dynamic-ajax-select-example/blob/master/repeater-ajax-load-more/repeater-ajax-load-more.php
-
-function my_repeater_show_more(filter) {
+/** 
+* makes an ajax request to my wordpress intance to get back a json representation of my already filtered cards.
+* @param {string} filter - an string that represent the category that we want to filter
+*/
+function myRepeaterShowMore(filter) {
   // make ajax request
   $.post(
-    my_repeater_ajax_url, {
+    myRepeaterAjaxUrl, {
       // this is the AJAX action we set up in PHP
       'action': 'my_repeater_filter',
       'postId' : post_id,
